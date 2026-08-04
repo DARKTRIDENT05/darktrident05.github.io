@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="400" viewBox="0 0 360 400">
+<rect width="360" height="400" fill="#a8d8ff"/>
+<circle cx="77" cy="23" r="9" fill="#d9c9ff" stroke="#2b2b3a" stroke-width="2.5"/><path d="M91 102l4.199999999999999 8.399999999999999L103 111.6l-8.399999999999999 4.199999999999999L94.6 126l-3.5999999999999996-7.199999999999999L79 117.6l7.199999999999999-6.0Z" fill="#ff6b57" stroke="#2b2b3a" stroke-width="2"/><circle cx="64" cy="95" r="7" fill="#a8d8ff" stroke="#2b2b3a" stroke-width="2.5"/><path d="M131 37l4.199999999999999 8.399999999999999L143 46.6l-8.399999999999999 4.199999999999999L134.6 61l-3.5999999999999996-7.199999999999999L119 52.6l7.199999999999999-6.0Z" fill="#ffb8d1" stroke="#2b2b3a" stroke-width="2"/><path d="M121 111q10 -14 20 0t20 0" fill="none" stroke="#d9c9ff" stroke-width="3.5" stroke-linecap="round"/><path d="M234 34l4.8999999999999995 9.799999999999999L248 45.2l-9.799999999999999 4.8999999999999995L238.2 62l-4.2-8.4L220 52.2l8.4-7.0Z" fill="#a8d8ff" stroke="#2b2b3a" stroke-width="2"/><path d="M23 107l3.5 7.0L33 115.0l-7.0 3.5L26.0 127l-3.0-6.0L13 120.0l6.0-5.0Z" fill="#ffd23f" stroke="#2b2b3a" stroke-width="2"/><path d="M162 39q10 -14 20 0t20 0" fill="none" stroke="#ffd23f" stroke-width="3.5" stroke-linecap="round"/><circle cx="192" cy="33" r="11" fill="#ff6b57" stroke="#2b2b3a" stroke-width="2.5"/><path d="M196 97q10 -14 20 0t20 0" fill="none" stroke="#b8f2d8" stroke-width="3.5" stroke-linecap="round"/>
+<circle cx="180" cy="190" r="85" fill="#ffb454" stroke="#2b2b3a" stroke-width="5"/>
+<circle cx="150" cy="175" r="14" fill="#fff" stroke="#2b2b3a" stroke-width="4"/>
+<circle cx="210" cy="175" r="14" fill="#fff" stroke="#2b2b3a" stroke-width="4"/>
+<circle cx="152" cy="177" r="5.5" fill="#2b2b3a"/>
+<circle cx="212" cy="177" r="5.5" fill="#2b2b3a"/>
+<ellipse cx="132" cy="212" rx="10" ry="6" fill="#ff8fa3" opacity="0.85"/>
+<ellipse cx="228" cy="212" rx="10" ry="6" fill="#ff8fa3" opacity="0.85"/>
+<path d="M158 222 Q180 244 202 222" fill="none" stroke="#2b2b3a" stroke-width="5" stroke-linecap="round"/>
+<path d="M110 320 Q180 270 250 320 L250 400 L110 400 Z" fill="#ff6b57" stroke="#2b2b3a" stroke-width="5"/>
+<text x="180" y="372" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="bold" font-size="17" fill="#fff">your photo here!</text>
+</svg>
