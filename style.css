@@ -15,6 +15,7 @@
   --ink:      #2b2b3a;            /* friendly near-black         */
   --cream:    #fff8ec;            /* main background             */
   --coral:    #ff6b57;
+  --coral-ink:#c2412f;            /* coral dark enough for small text */
   --lemon:    #ffd23f;
   --mint:     #b8f2d8;
   --mint-bg:  #e3f9ef;
@@ -48,6 +49,7 @@ body {
   overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
+[hidden] { display: none !important; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 ::selection { background: var(--lemon); }
@@ -64,6 +66,7 @@ code {
 .section { padding: clamp(4.5rem, 10vh, 7rem) 0; position: relative; }
 .section--mint { background: var(--mint-bg); }
 .section--sky  { background: var(--sky-bg); }
+.section--lav  { background: var(--lav-bg); }
 
 .section__title {
   font-family: var(--font-display);
@@ -162,6 +165,8 @@ code {
 .wave--cream.flip { background: var(--sky-bg); }
 .wave--mint { background: var(--cream); }
 .wave--sky { background: var(--cream); }
+.wave--lav svg path { fill: var(--lav-bg); }
+.wave--lav { background: var(--cream); }
 
 /* ===================== 6. BUTTONS & STICKERS ===================== */
 .btn {
@@ -174,7 +179,7 @@ code {
   background: #fff;
   transition: transform .25s var(--boing), box-shadow .25s var(--boing);
 }
-.btn--coral { background: var(--coral); color: #fff; }
+.btn--coral { background: var(--coral); color: var(--ink); }
 .btn--outline { background: #fff; }
 .btn--big { font-size: 1.2rem; padding: 1rem 2.4rem; }
 
@@ -195,7 +200,7 @@ code {
 .sticker--mint { background: var(--mint); }
 .sticker--sky { background: var(--sky); }
 .sticker--pink { background: var(--pink); }
-.sticker--coral { background: var(--coral); color: #fff; }
+.sticker--coral { background: var(--coral); color: var(--ink); }
 .sticker--lav { background: var(--lav); }
 
 [data-drag] { cursor: grab; user-select: none; touch-action: none; }
@@ -211,6 +216,8 @@ code {
   overflow: visible;
 }
 .hero__hello { transform: rotate(-3deg); margin-bottom: 2rem; }
+/* keep hero text above the floating doodles */
+.hero__hello, .hero__title, .hero__sub, .hero__cta { position: relative; z-index: 1; }
 
 .hero__title {
   font-family: var(--font-display);
@@ -228,12 +235,12 @@ code {
 /* Rainbow row: each letter gets its own candy color (cycles every 6).
    (A gradient text-clip breaks once letters become inline-block spans,
    so we color per-letter instead — bonus: it looks even more playful.) */
-.hero__row--rainbow .ltr:nth-child(6n+1) { color: var(--coral); }
-.hero__row--rainbow .ltr:nth-child(6n+2) { color: var(--orange); }
-.hero__row--rainbow .ltr:nth-child(6n+3) { color: #e8b400; }
-.hero__row--rainbow .ltr:nth-child(6n+4) { color: #3cb878; }
-.hero__row--rainbow .ltr:nth-child(6n+5) { color: #4f8cff; }
-.hero__row--rainbow .ltr:nth-child(6n+6) { color: #a06bff; }
+.hero__row--rainbow .ltr:nth-child(6n+1) { color: #d64a36; }
+.hero__row--rainbow .ltr:nth-child(6n+2) { color: #c46a00; }
+.hero__row--rainbow .ltr:nth-child(6n+3) { color: #a87c00; }
+.hero__row--rainbow .ltr:nth-child(6n+4) { color: #238a55; }
+.hero__row--rainbow .ltr:nth-child(6n+5) { color: #3b6fe0; }
+.hero__row--rainbow .ltr:nth-child(6n+6) { color: #8a4fe8; }
 .hero__row--rainbow .ltr:hover { color: var(--ink); }
 
 .hero__sub { font-size: 1.15rem; color: #6b6b7c; margin-bottom: 2.4rem; }
@@ -248,7 +255,7 @@ code {
 .hero__scrollhint {
   position: absolute; bottom: 1.6rem; left: 50%;
   transform: translateX(-50%);
-  font-size: .85rem; font-weight: 800; color: #9a9aa8;
+  font-size: .85rem; font-weight: 800; color: #6b6b7c;
 }
 .bounce-arrow { display: inline-block; animation: hop 1.2s var(--boing) infinite; }
 @keyframes hop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
@@ -298,7 +305,7 @@ code {
   position: relative;
   transition: transform .35s var(--boing);
 }
-.polaroid img { border-radius: 8px; border: 2px solid var(--ink); }
+.polaroid img { width: 100%; height: auto; border-radius: 8px; border: 2px solid var(--ink); }
 .polaroid__caption {
   display: block; text-align: center;
   font-family: var(--font-display); font-size: .95rem;
@@ -339,21 +346,48 @@ code {
 /* ====================== 10. POWERS & PROJECTS ====================== */
 .powers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
 }
+/* flip card: .power holds the perspective, .power__inner turns over */
 .power {
-  border: var(--border); border-radius: var(--r);
-  box-shadow: var(--shadow);
-  padding: 1.6rem 1rem;
-  display: flex; flex-direction: column; align-items: center; gap: .3rem;
-  transition: transform .3s var(--boing), box-shadow .3s var(--boing);
+  perspective: 900px;
+  border-radius: var(--r);
+  outline-offset: 6px;
 }
+.power:focus-visible { outline: 4px solid var(--coral-ink); }
 .power:nth-child(odd) { transform: rotate(-1.5deg); }
 .power:nth-child(even) { transform: rotate(1.5deg); }
-.power:hover {
-  transform: rotate(0deg) translateY(-8px) scale(1.05);
-  box-shadow: 9px 12px 0 var(--ink);
+.power__inner {
+  display: grid;                 /* both faces share one cell → card fits the taller face */
+  min-height: 190px;
+  transform-style: preserve-3d;
+  transition: transform .7s var(--boing);
+}
+.power.is-flipped .power__inner,
+.power:focus-visible .power__inner { transform: rotateY(180deg); }
+@media (hover: hover) {
+  .power:hover .power__inner { transform: rotateY(180deg); }
+}
+.power__face {
+  grid-area: 1 / 1;
+  border: var(--border); border-radius: var(--r);
+  box-shadow: var(--shadow);
+  padding: 1.3rem 1rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .3rem;
+  text-align: center;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+}
+.power__back {
+  background: var(--ink); color: var(--cream);
+  transform: rotateY(180deg);
+  box-shadow: -6px 6px 0 var(--coral);   /* mirrored by the flip, so it lands bottom-right */
+  font-weight: 800; font-size: .92rem; line-height: 1.45;
+}
+.power__used {
+  font-family: var(--font-display); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink); background: var(--lemon);
+  border-radius: 999px; padding: .05rem .7rem; margin-bottom: .35rem;
 }
 .power:hover .power__emoji { animation: wiggle .45s ease-in-out; }
 .power__emoji { font-size: 2.2rem; }
@@ -376,6 +410,9 @@ code {
   transform: rotate(0deg) translateY(-8px) scale(1.02);
   box-shadow: 10px 13px 0 var(--ink);
 }
+.proj:focus-visible { outline: 4px solid var(--coral-ink); outline-offset: 4px; }
+/* odd card out: centre it on its own row */
+.proj:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - .9rem); }
 .proj__img { border-bottom: var(--border); overflow: hidden; }
 .proj__img img {
   width: 100%; aspect-ratio: 3/2; object-fit: cover;
@@ -412,12 +449,12 @@ code {
   margin-bottom: 1rem;
 }
 .modal__card h3 { font-family: var(--font-display); font-size: 1.6rem; }
-.modal__tech { font-weight: 800; font-size: .85rem; color: var(--coral); margin: .2rem 0 .8rem; }
+.modal__tech { font-weight: 800; font-size: .85rem; color: var(--coral-ink); margin: .2rem 0 .8rem; }
 .modal__links { display: flex; gap: .9rem; margin-top: 1.2rem; flex-wrap: wrap; }
 .modal__x {
   position: absolute; top: .9rem; right: .9rem;
   width: 40px; height: 40px;
-  background: var(--coral); color: #fff;
+  background: var(--coral); color: var(--ink);
   border: var(--border); border-radius: 50%;
   box-shadow: var(--shadow-sm);
   font-weight: 800;
@@ -467,6 +504,61 @@ code {
 .path__card h3 { font-family: var(--font-display); font-size: 1.2rem; }
 .path__card p { font-size: .95rem; color: #6b6b7c; }
 
+/* ======================= 12. CONTACT POSTCARD ======================= */
+.postcard {
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: #fff;
+  border: var(--border); border-radius: 18px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.postcard--hello { animation: wiggle .6s ease-in-out 2; }
+.postcard__note {
+  padding: 2rem 1.8rem;
+  border-right: 3px dashed rgba(43, 43, 58, .35);
+  font-size: 1.02rem;
+}
+.postcard__note p { margin-bottom: .8rem; }
+.postcard__greeting, .postcard__sign { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; }
+.postcard__sign { transform: rotate(-3deg); display: inline-block; color: var(--coral-ink); margin: .4rem 0 0 !important; }
+
+.postcard__address { padding: 2rem 1.8rem 1.8rem; position: relative; }
+.postcard__stamp {
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  width: 64px; height: 76px;
+  display: grid; place-content: center; text-align: center;
+  font-size: 1.7rem; line-height: 1.1;
+  background: var(--mint);
+  outline: 3px dashed var(--ink); outline-offset: -7px;   /* perforated edge */
+  border: 3px solid var(--mint);
+  transform: rotate(4deg);
+}
+.postcard__stamp small { font-family: var(--font-display); font-size: .75rem; font-weight: 700; }
+.postcard__postmark {
+  position: absolute; top: 2.6rem; right: 4.6rem;
+  font-family: var(--font-display); font-size: .7rem; letter-spacing: .12em;
+  color: rgba(43, 43, 58, .5);
+  border: 2px solid rgba(43, 43, 58, .35); border-radius: 50%;
+  padding: .9rem .4rem;
+  transform: rotate(-14deg);
+  pointer-events: none;
+}
+.postcard__lines { list-style: none; margin-top: 5.4rem; }
+.postcard__lines li {
+  display: grid; grid-template-columns: 5.2rem 1fr; align-items: baseline;
+  padding: .55rem 0;
+  border-bottom: 2px solid rgba(43, 43, 58, .18);
+}
+.postcard__label { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #6b6b7c; }
+.postcard__lines a {
+  font-weight: 800; overflow-wrap: anywhere;
+  text-decoration: underline; text-decoration-color: var(--coral); text-decoration-thickness: 3px; text-underline-offset: 3px;
+  transition: color .2s;
+}
+.postcard__lines a:hover, .postcard__lines a:focus-visible { color: var(--coral-ink); }
+.postcard__actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.4rem; }
+.postcard__status { font-weight: 800; font-size: .9rem; overflow-wrap: anywhere; }
+
 /* ==================== 13. FOOTER + SOCIALS ==================== */
 .socials { display: flex; justify-content: center; gap: 1rem; }
 .social {
@@ -477,6 +569,23 @@ code {
   border: var(--border); border-radius: 50%;
   box-shadow: var(--shadow-sm);
 }
+
+/* "Email copied!" bubble that pops up above the footer email button */
+.social-wrap { position: relative; display: inline-block; }
+.social__toast {
+  position: absolute; bottom: calc(100% + 12px); left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  white-space: nowrap;
+  background: var(--lemon);
+  border: var(--border); border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  padding: .3rem .9rem;
+  font-weight: 800; font-size: .85rem;
+  animation: toast-pop .35s var(--boing);
+  pointer-events: none;
+}
+.social__toast:empty { display: none; }
+@keyframes toast-pop { from { opacity: 0; transform: translateX(-50%) translateY(8px) scale(.7); } }
 
 .footer {
   border-top: var(--border);
@@ -517,6 +626,12 @@ code {
   .about__grid { grid-template-columns: 1fr; }
   .about__pic-wrap { max-width: 320px; margin-inline: auto; }
   .projects { grid-template-columns: 1fr; }
+  .proj:last-child:nth-child(odd) { width: auto; justify-self: stretch; }
+  .powers { grid-template-columns: repeat(2, 1fr); }
+
+  /* postcard stacks: note on top, address below */
+  .postcard { grid-template-columns: 1fr; }
+  .postcard__note { border-right: 0; border-bottom: 3px dashed rgba(43, 43, 58, .35); }
 
   /* story path collapses to a left rail */
   .path::before { left: 24px; }
@@ -537,7 +652,7 @@ code {
   }
   .nav__links.is-open { transform: translateY(0); }
   .nav__burger { display: flex; }
-  .hero__badge--1, .hero__badge--3 { display: none; }
+  .hero__badge { display: none; }   /* no room beside the heading on small screens */
 }
 
 @media (prefers-reduced-motion: reduce) {

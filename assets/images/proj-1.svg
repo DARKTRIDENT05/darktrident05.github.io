@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480">
-<rect width="720" height="480" fill="#e3f1ff"/>
-<circle cx="157" cy="311" r="13" fill="#ff6b57" stroke="#2b2b3a" stroke-width="2.5"/><circle cx="480" cy="261" r="9" fill="#d9c9ff" stroke="#2b2b3a" stroke-width="2.5"/><path d="M116 269q10 -14 20 0t20 0" fill="none" stroke="#ff6b57" stroke-width="3.5" stroke-linecap="round"/><path d="M419 241q10 -14 20 0t20 0" fill="none" stroke="#ffb8d1" stroke-width="3.5" stroke-linecap="round"/><circle cx="22" cy="376" r="9" fill="#a8d8ff" stroke="#2b2b3a" stroke-width="2.5"/><circle cx="625" cy="72" r="6" fill="#b8f2d8" stroke="#2b2b3a" stroke-width="2.5"/><path d="M685 297q10 -14 20 0t20 0" fill="none" stroke="#ff6b57" stroke-width="3.5" stroke-linecap="round"/><path d="M410 371q10 -14 20 0t20 0" fill="none" stroke="#ffd23f" stroke-width="3.5" stroke-linecap="round"/><path d="M49 290q10 -14 20 0t20 0" fill="none" stroke="#ffd23f" stroke-width="3.5" stroke-linecap="round"/><circle cx="527" cy="303" r="9" fill="#ffd23f" stroke="#2b2b3a" stroke-width="2.5"/>
-<text x="50%" y="46%" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-size="79">📊</text>
-<text x="50%" y="62%" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="bold" font-size="36" fill="#2b2b3a">Aurora Analytics</text>
-<text x="50%" y="70%" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-size="18" fill="#2b2b3a" opacity="0.6">replace this image!</text>
+<rect width="720" height="480" fill="#fff3d6"/>
+<circle cx="90" cy="80" r="12" fill="#ff6b57" stroke="#2b2b3a" stroke-width="2.5"/><circle cx="630" cy="90" r="9" fill="#b8f2d8" stroke="#2b2b3a" stroke-width="2.5"/><path d="M560 400q10 -14 20 0t20 0" fill="none" stroke="#ff6b57" stroke-width="3.5" stroke-linecap="round"/><path d="M110 410q10 -14 20 0t20 0" fill="none" stroke="#d9c9ff" stroke-width="3.5" stroke-linecap="round"/><circle cx="60" cy="300" r="8" fill="#ffd23f" stroke="#2b2b3a" stroke-width="2.5"/><circle cx="660" cy="280" r="10" fill="#ffb8d1" stroke="#2b2b3a" stroke-width="2.5"/>
+<text x="50%" y="46%" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-size="79">📚</text>
+<text x="50%" y="62%" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="bold" font-size="36" fill="#2b2b3a">TeachTeam</text>
+<text x="50%" y="70%" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-size="20" fill="#2b2b3a" opacity="0.75">full-stack tutor hiring platform</text>
 </svg>

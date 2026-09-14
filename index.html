@@ -4,12 +4,13 @@
   <!-- ================= META / SEO ================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arnav Jain — makes fun things for the internet</title>
-  <meta name="description" content="Arnav Jain — developer, designer & professional pixel wrangler. Portfolio with a personality." />
+  <title>Arnav Jain — Computer Science Student</title>
+  <meta name="description" content="Arnav Jain — Computer Science student at RMIT University, Melbourne, who learns by building full-stack web apps with teams." />
   <meta name="author" content="Arnav Jain" />
   <meta name="theme-color" content="#fff8ec" />
-  <meta property="og:title" content="Arnav Jain — makes fun things for the internet" />
-  <meta property="og:description" content="Come for the projects, stay for the mascot." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arnav Jain — Computer Science Student" />
+  <meta property="og:description" content="Projects, skills and experience from a Computer Science student at RMIT University who enjoys building things people can use." />
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 
   <!-- Fonts: Fredoka (chunky friendly headings) + Nunito (round body) -->
@@ -36,10 +37,11 @@
       <a href="#hero" class="nav__logo wiggle-hover">Arnav<span class="accent">!</span></a>
       <ul class="nav__links">
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Powers</a></li>
-        <li><a href="#projects">Stuff I made</a></li>
-        <li><a href="#story">The lore</a></li>
-        <li><a href="mailto:hello@arnavjain.dev" class="nav__cta">Say hi 👋</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#story">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav__cta">Say hi 👋</a></li>
       </ul>
       <button class="nav__burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
@@ -50,37 +52,37 @@
     <!-- ================= HERO ================= -->
     <section class="hero" id="hero">
       <!-- floating doodles -->
-      <svg class="doodle doodle--star d1" viewBox="0 0 40 40"><path d="M20 2l4.5 12.5L37 19l-12.5 4.5L20 36l-4.5-12.5L3 19l12.5-4.5z"/></svg>
-      <svg class="doodle doodle--squiggle d2" viewBox="0 0 80 24"><path d="M2 12c8-16 12 16 20 0s12 16 20 0 12 16 20 0" fill="none"/></svg>
-      <svg class="doodle doodle--cloud d3" viewBox="0 0 90 50"><path d="M20 42a14 14 0 1 1 4-27 18 18 0 0 1 34 5 12 12 0 0 1-2 22z"/></svg>
-      <svg class="doodle doodle--star d4" viewBox="0 0 40 40"><path d="M20 2l4.5 12.5L37 19l-12.5 4.5L20 36l-4.5-12.5L3 19l12.5-4.5z"/></svg>
-      <svg class="doodle doodle--squiggle d5" viewBox="0 0 80 24"><path d="M2 12c8-16 12 16 20 0s12 16 20 0 12 16 20 0" fill="none"/></svg>
+      <svg class="doodle doodle--star d1" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l4.5 12.5L37 19l-12.5 4.5L20 36l-4.5-12.5L3 19l12.5-4.5z"/></svg>
+      <svg class="doodle doodle--squiggle d2" viewBox="0 0 80 24" aria-hidden="true"><path d="M2 12c8-16 12 16 20 0s12 16 20 0 12 16 20 0" fill="none"/></svg>
+      <svg class="doodle doodle--cloud d3" viewBox="0 0 90 50" aria-hidden="true"><path d="M20 42a14 14 0 1 1 4-27 18 18 0 0 1 34 5 12 12 0 0 1-2 22z"/></svg>
+      <svg class="doodle doodle--star d4" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2l4.5 12.5L37 19l-12.5 4.5L20 36l-4.5-12.5L3 19l12.5-4.5z"/></svg>
+      <svg class="doodle doodle--squiggle d5" viewBox="0 0 80 24" aria-hidden="true"><path d="M2 12c8-16 12 16 20 0s12 16 20 0 12 16 20 0" fill="none"/></svg>
 
       <div class="hero__inner">
-        <p class="hero__hello sticker sticker--lemon" data-drag>👋 oh hey, you found me</p>
+        <p class="hero__hello sticker sticker--lemon" data-drag>👋 hello from Melbourne</p>
 
         <!-- Each letter becomes a spring — hover to make it jump -->
-        <h1 class="hero__title" id="heroTitle">
-          <span class="hero__row" data-jump>I'm Arnav.</span>
-          <span class="hero__row hero__row--rainbow" data-jump>I make fun things</span>
-          <span class="hero__row" data-jump>for the internet<span class="accent">.</span></span>
+        <h1 class="hero__title" id="heroTitle" aria-label="I'm Arnav. I like building useful things.">
+          <span class="hero__row" data-jump aria-hidden="true">I'm Arnav.</span>
+          <span class="hero__row hero__row--rainbow" data-jump aria-hidden="true">I like building</span>
+          <span class="hero__row" data-jump aria-hidden="true">useful things.</span>
         </h1>
 
-        <p class="hero__sub">Developer, designer &amp; professional pixel-wrangler.<br />
-        Warning: this website contains <strong>traces of whimsy</strong>.</p>
+        <p class="hero__sub">Computer Science student at RMIT University.<br />
+        I learn best by building — with curiosity, a good team and plenty of testing.</p>
 
         <div class="hero__cta">
-          <a href="#projects" class="btn btn--coral boing" id="confettiBtn">See the goods 🎁</a>
-          <a href="mailto:hello@arnavjain.dev" class="btn btn--outline boing">Let's be friends</a>
+          <a href="#projects" class="btn btn--coral boing" id="confettiBtn">See my projects 🎁</a>
+          <a href="#contact" class="btn btn--outline boing">Get in touch</a>
         </div>
 
         <!-- draggable stickers -->
         <span class="sticker sticker--mint hero__badge hero__badge--1" data-drag>✦ drag me!</span>
-        <span class="sticker sticker--sky hero__badge hero__badge--2" data-drag>CSS wizard 🧙</span>
-        <span class="sticker sticker--pink hero__badge hero__badge--3" data-drag>est. 2005</span>
+        <span class="sticker sticker--sky hero__badge hero__badge--2" data-drag>AZ-900 certified ☁️</span>
+        <span class="sticker sticker--pink hero__badge hero__badge--3" data-drag>graduating Dec '26 🎓</span>
       </div>
 
-      <div class="hero__scrollhint" aria-hidden="true">scroll for snacks <span class="bounce-arrow">↓</span></div>
+      <div class="hero__scrollhint" aria-hidden="true">scroll to explore <span class="bounce-arrow">↓</span></div>
     </section>
 
     <!-- wavy divider into mint -->
@@ -89,39 +91,43 @@
     <!-- ================= MARQUEE ================= -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>✦ software engineering student ✦ drinks too much redbull ✦ ships on fridays (bravely) ✦ 60fps or bust ✦ certified button-hover enjoyer ✦ software engineering student ✦ drinks too much redbull ✦ ships on fridays (bravely) ✦ 60fps or bust ✦ certified button-hover enjoyer&nbsp;</span>
-        <span>✦ software engineering student ✦ drinks too much redbull ✦ ships on fridays (bravely) ✦ 60fps or bust ✦ certified button-hover enjoyer ✦ software engineering student ✦ drinks too much redbull ✦ ships on fridays (bravely) ✦ 60fps or bust ✦ certified button-hover enjoyer&nbsp;</span>
+        <span>✦ computer science student ✦ learning by building ✦ design meets code ✦ better together in teams ✦ always asking "what if?" ✦ computer science student ✦ learning by building ✦ design meets code ✦ better together in teams ✦ always asking "what if?"&nbsp;</span>
+        <span>✦ computer science student ✦ learning by building ✦ design meets code ✦ better together in teams ✦ always asking "what if?" ✦ computer science student ✦ learning by building ✦ design meets code ✦ better together in teams ✦ always asking "what if?"&nbsp;</span>
       </div>
     </div>
 
     <!-- ================= ABOUT ================= -->
     <section class="section section--mint" id="about">
       <div class="container">
-        <h2 class="section__title" data-pop><span class="scribble">Who dis?</span> 🤔</h2>
+        <h2 class="section__title" data-pop><span class="scribble">A bit about me</span> 🤔</h2>
 
         <div class="about__grid">
           <div class="about__pic-wrap" data-pop>
             <div class="polaroid tilt-l">
-              <img src="assets/images/me.svg" alt="Cartoon portrait of Arnav" width="360" height="400" />
-              <span class="polaroid__caption">me, probably debugging</span>
+              <img src="assets/images/arnav-jain.jpg" alt="Photo of Arnav Jain smiling, wearing a navy shirt" width="360" height="400" />
+              <span class="polaroid__caption">hi, that's me!</span>
               <span class="polaroid__tape"></span>
             </div>
           </div>
 
           <div class="about__text">
-            <p data-pop>Hi! I'm a developer-slash-designer who believes software should feel like a
-            <strong>high-five</strong>, not a form to fill. I build apps, sites and tiny experiments
-            that make people go <em>"ooh, wait, do that again."</em></p>
-            <p data-pop>When I'm not pushing pixels I'm collecting hobbies at an unsustainable rate
-            and explaining to my family what a "div" is.</p>
+            <p data-pop>I'm a <strong>Computer Science</strong> student at RMIT University in Melbourne,
+            graduating in December 2026. Most of what I know has come from building things — full-stack
+            web apps with React, TypeScript, Node.js and Spring Boot, usually as part of a team.</p>
+            <p data-pop>I like the moment a tricky problem turns into something a person can actually use.
+            Studying UI/UX design, software testing and systems architecture has taught me to care about
+            both sides: <em>how it works</em> and <em>how it feels</em>. Mentoring students in programming
+            and running my own Shopify store have taught me to explain things clearly and to keep learning
+            from real feedback.</p>
+            <p data-pop>I'm looking for chances to learn alongside curious, creative people and to get better
+            at designing digital experiences that genuinely help.</p>
 
             <div class="stats">
-              <div class="stat-sticker sticker--lemon" data-pop><span class="stat-num" data-count="40">0</span>+<small>things shipped</small></div>
-              <div class="stat-sticker sticker--pink" data-pop><span class="stat-num" data-count="5">0</span><small>years of chaos</small></div>
-              <div class="stat-sticker sticker--sky" data-pop><span class="stat-num" data-count="9000">0</span>+<small>redbulls consumed</small></div>
-              <div class="stat-sticker sticker--mint" data-pop><span class="stat-num" data-count="0">0</span><small>regrets*</small></div>
+              <div class="stat-sticker sticker--lemon" data-pop><span class="stat-num" data-count="1">0</span><small>Azure certification</small></div>
+              <div class="stat-sticker sticker--pink" data-pop><span class="stat-num" data-count="5">0</span><small>featured projects</small></div>
+              <div class="stat-sticker sticker--sky" data-pop><span><span class="stat-num" data-count="6">0</span>+</span><small>students mentored</small></div>
+              <div class="stat-sticker sticker--mint" data-pop><span class="stat-num" data-count="7">0</span><small>languages used</small></div>
             </div>
-            <p class="tiny-print" data-pop>*rounded down</p>
           </div>
         </div>
       </div>
@@ -132,16 +138,43 @@
     <!-- ================= SKILLS ================= -->
     <section class="section" id="skills">
       <div class="container">
-        <h2 class="section__title" data-pop>Superpowers <span class="scribble">⚡</span></h2>
-        <p class="section__sub" data-pop>Hover them. They're ticklish.</p>
+        <h2 class="section__title" data-pop>Skills &amp; tools <span class="scribble">⚡</span></h2>
+        <p class="section__sub" data-pop>Hover or tap a card to flip it and see where I've used it.</p>
 
+        <!-- SKILL FLIP CARD: front = what, back = where it was used -->
         <div class="powers">
-          <button class="power sticker--coral" data-pop><span class="power__emoji">🎨</span><span class="power__name">Frontend</span><span class="power__lvl">HTML · CSS · JS · TS</span></button>
-          <button class="power sticker--sky" data-pop><span class="power__emoji">🌀</span><span class="power__name">Animation</span><span class="power__lvl">GSAP · Canvas · springs</span></button>
-          <button class="power sticker--lemon" data-pop><span class="power__emoji">✏️</span><span class="power__name">Design</span><span class="power__lvl">Figma · systems · vibes</span></button>
-          <button class="power sticker--mint" data-pop><span class="power__emoji">🔌</span><span class="power__name">Backend</span><span class="power__lvl">Node · Python · APIs</span></button>
-          <button class="power sticker--pink" data-pop><span class="power__emoji">🤖</span><span class="power__name">AI stuff</span><span class="power__lvl">LLMs · agents · magic</span></button>
-          <button class="power sticker--lav" data-pop><span class="power__emoji">🧩</span><span class="power__name">Problem solving</span><span class="power__lvl">rubber-duck certified</span></button>
+          <div class="power" data-pop tabindex="0"><div class="power__inner">
+            <div class="power__face power__front sticker--coral"><span class="power__emoji" aria-hidden="true">🎨</span><span class="power__name">Frontend</span><span class="power__lvl">React · TypeScript · HTML · CSS</span></div>
+            <div class="power__face power__back"><span class="power__used">used in</span><span>TeachTeam &amp; EventHub</span></div>
+          </div></div>
+          <div class="power" data-pop tabindex="0"><div class="power__inner">
+            <div class="power__face power__front sticker--sky"><span class="power__emoji" aria-hidden="true">🔌</span><span class="power__name">Backend</span><span class="power__lvl">Node.js · Express · Spring Boot · REST APIs</span></div>
+            <div class="power__face power__back"><span class="power__used">used in</span><span>TeachTeam (Node &amp; Express) · EventHub (Spring Boot)</span></div>
+          </div></div>
+          <div class="power" data-pop tabindex="0"><div class="power__inner">
+            <div class="power__face power__front sticker--lemon"><span class="power__emoji" aria-hidden="true">🗄️</span><span class="power__name">Data</span><span class="power__lvl">MySQL · schema design · ER modelling · JDBC</span></div>
+            <div class="power__face power__back"><span class="power__used">used in</span><span>Food Loss &amp; Waste Insights · TeachTeam · Power BI at CTC</span></div>
+          </div></div>
+          <div class="power" data-pop tabindex="0"><div class="power__inner">
+            <div class="power__face power__front sticker--mint"><span class="power__emoji" aria-hidden="true">☁️</span><span class="power__name">Cloud &amp; DevOps</span><span class="power__lvl">AWS · Azure · Docker · GitHub Actions</span></div>
+            <div class="power__face power__back"><span class="power__used">used in</span><span>EventHub CI/CD · AWS MySQL on TeachTeam · AZ-900</span></div>
+          </div></div>
+          <div class="power" data-pop tabindex="0"><div class="power__inner">
+            <div class="power__face power__front sticker--pink"><span class="power__emoji" aria-hidden="true">🧪</span><span class="power__name">Testing</span><span class="power__lvl">JUnit 5 · UI &amp; integration testing</span></div>
+            <div class="power__face power__back"><span class="power__used">used in</span><span>EventHub regression tests · Software Testing coursework</span></div>
+          </div></div>
+          <div class="power" data-pop tabindex="0"><div class="power__inner">
+            <div class="power__face power__front sticker--lav"><span class="power__emoji" aria-hidden="true">🧩</span><span class="power__name">Languages</span><span class="power__lvl">Java · Python · C++ · SQL · R</span></div>
+            <div class="power__face power__back"><span class="power__used">used in</span><span>C++ for MazeRunner · taught Java, Python &amp; C++ as a mentor</span></div>
+          </div></div>
+          <div class="power" data-pop tabindex="0"><div class="power__inner">
+            <div class="power__face power__front sticker--lemon"><span class="power__emoji" aria-hidden="true">✏️</span><span class="power__name">Design</span><span class="power__lvl">UI/UX coursework · responsive UI</span></div>
+            <div class="power__face power__back"><span class="power__used">used in</span><span>UI/UX Design coursework · usability testing on Food Loss &amp; Waste</span></div>
+          </div></div>
+          <div class="power" data-pop tabindex="0"><div class="power__inner">
+            <div class="power__face power__front sticker--sky"><span class="power__emoji" aria-hidden="true">🤝</span><span class="power__name">Teamwork</span><span class="power__lvl">Agile/Scrum · Jira · Git</span></div>
+            <div class="power__face power__back"><span class="power__used">used in</span><span>Scrum Master on EventHub · team of 3 on MazeRunner</span></div>
+          </div></div>
         </div>
       </div>
     </section>
@@ -151,64 +184,70 @@
     <!-- ================= PROJECTS ================= -->
     <section class="section section--sky" id="projects">
       <div class="container">
-        <h2 class="section__title" data-pop>Stuff I made <span class="scribble">🛠️</span></h2>
-        <p class="section__sub" data-pop>Click a card — they open up like little presents.</p>
+        <h2 class="section__title" data-pop>Things I've built <span class="scribble">🛠️</span></h2>
+        <p class="section__sub" data-pop>University and team projects. Select a card to read more.</p>
 
         <div class="projects">
-          <!-- PROJECT CARD: duplicate an <article>, edit the data-* attrs + image -->
-          <article class="proj tilt-l" data-pop
-                   data-title="Aurora Analytics"
-                   data-blurb="A dashboard that makes charts fun. Yes, really. Real-time data with animations so smooth they should be illegal."
-                   data-tech="JS · D3 · Node"
-                   data-github="https://github.com/yourusername/aurora"
-                   data-demo="https://yourusername.github.io/aurora">
-            <div class="proj__img"><img src="assets/images/proj-1.svg" alt="Aurora Analytics" loading="lazy" /></div>
+          <!-- PROJECT CARD: duplicate an <article>, edit the data-* attrs + image.
+               data-github / data-demo are optional — their buttons only show when a URL is set. -->
+          <!-- TODO(Arnav): add data-github / data-demo URLs for any project whose repo or demo can be shared publicly. -->
+          <article class="proj tilt-l" data-pop tabindex="0" role="button" aria-haspopup="dialog"
+                   data-title="TeachTeam — Tutor Hiring Platform"
+                   data-blurb="A full-stack platform for hiring tutors. I engineered role-based authentication for admins, tutors and users with secure session management in React and TypeScript, and built RESTful backend services on a cloud-hosted AWS MySQL database with a normalised schema."
+                   data-tech="React · TypeScript · Node.js · Express · TypeORM · AWS MySQL">
+            <div class="proj__img"><img src="assets/images/proj-1.svg" alt="" loading="lazy" /></div>
             <div class="proj__body">
-              <h3>Aurora Analytics</h3>
-              <p>Charts, but make them ✨fun✨</p>
-              <span class="proj__tag sticker--lemon">web app</span>
+              <h3>TeachTeam</h3>
+              <p>Full-stack tutor hiring platform</p>
+              <span class="proj__tag sticker--lemon">full-stack</span>
             </div>
           </article>
 
-          <article class="proj tilt-r" data-pop
-                   data-title="Pulse"
-                   data-blurb="A fitness app that doesn't guilt-trip you. Gentle streaks, confetti when you show up, zero shame when you don't."
-                   data-tech="React Native · Firebase"
-                   data-github="https://github.com/yourusername/pulse"
-                   data-demo="https://yourusername.github.io/pulse">
-            <div class="proj__img"><img src="assets/images/proj-2.svg" alt="Pulse app" loading="lazy" /></div>
+          <article class="proj tilt-r" data-pop tabindex="0" role="button" aria-haspopup="dialog"
+                   data-title="EventHub — Campus Event Management"
+                   data-blurb="A campus event management system built by a five-person team, where I served as Scrum Master. We delivered a React frontend integrated with a Spring Boot REST API. I configured CI/CD pipelines with GitHub Actions, containerised the application with Docker and automated regression testing with JUnit 5."
+                   data-tech="Java 17 · Spring Boot · React · Docker · GitHub Actions · JUnit 5 · MySQL">
+            <div class="proj__img"><img src="assets/images/proj-2.svg" alt="" loading="lazy" /></div>
             <div class="proj__body">
-              <h3>Pulse</h3>
-              <p>Fitness minus the guilt trips</p>
-              <span class="proj__tag sticker--pink">app</span>
+              <h3>EventHub</h3>
+              <p>Campus events, built by a 5-person Scrum team</p>
+              <span class="proj__tag sticker--pink">team project</span>
             </div>
           </article>
 
-          <article class="proj tilt-l" data-pop
-                   data-title="Doodle Bot"
-                   data-blurb="An AI that turns your terrible doodles into slightly less terrible doodles. Trained on my own terrible doodles."
-                   data-tech="Python · LLMs · Canvas"
-                   data-github="https://github.com/yourusername/doodlebot"
-                   data-demo="https://yourusername.github.io/doodlebot">
-            <div class="proj__img"><img src="assets/images/proj-3.svg" alt="Doodle Bot" loading="lazy" /></div>
+          <article class="proj tilt-l" data-pop tabindex="0" role="button" aria-haspopup="dialog"
+                   data-title="Food Loss & Waste Insights Platform"
+                   data-blurb="A web app for exploring food loss and waste data. I designed a normalised relational database, from ER modelling through to SQL schema, integrated it into a Javalin web app via JDBC, and delivered analytics features — filters, comparisons and time-based views — refined through iterative usability testing."
+                   data-tech="Java · Javalin · SQL · JDBC">
+            <div class="proj__img"><img src="assets/images/proj-3.svg" alt="" loading="lazy" /></div>
             <div class="proj__body">
-              <h3>Doodle Bot</h3>
-              <p>AI art buddy for bad artists</p>
-              <span class="proj__tag sticker--mint">AI toy</span>
+              <h3>Food Loss &amp; Waste Insights</h3>
+              <p>Data analytics shaped by usability testing</p>
+              <span class="proj__tag sticker--mint">data</span>
             </div>
           </article>
 
-          <article class="proj tilt-r" data-pop
-                   data-title="Lumen UI Kit"
-                   data-blurb="A design system with 120+ components and exactly one personality: friendly. Buttons so bouncy people click them for fun."
-                   data-tech="Figma · CSS · tokens"
-                   data-github="https://github.com/yourusername/lumen"
-                   data-demo="https://yourusername.github.io/lumen">
-            <div class="proj__img"><img src="assets/images/proj-4.svg" alt="Lumen UI kit" loading="lazy" /></div>
+          <article class="proj tilt-r" data-pop tabindex="0" role="button" aria-haspopup="dialog"
+                   data-title="Cybersecurity Practical — Network & Systems Security"
+                   data-blurb="A hands-on security practical. I implemented symmetric and asymmetric cryptography (GPG, AES, RSA, Diffie–Hellman) and simulated man-in-the-middle attacks to demonstrate secure key exchange. I also configured iptables firewall policies and analysed network traffic in Wireshark against CIA-triad risk frameworks."
+                   data-tech="Kali Linux · Wireshark · Nmap · iptables · GPG · AES · RSA">
+            <div class="proj__img"><img src="assets/images/proj-4.svg" alt="" loading="lazy" /></div>
             <div class="proj__body">
-              <h3>Lumen UI Kit</h3>
-              <p>Buttons people click for fun</p>
-              <span class="proj__tag sticker--lav">design</span>
+              <h3>Cybersecurity Practical</h3>
+              <p>Cryptography, firewalls &amp; traffic analysis</p>
+              <span class="proj__tag sticker--lav">security</span>
+            </div>
+          </article>
+
+          <article class="proj tilt-l" data-pop tabindex="0" role="button" aria-haspopup="dialog"
+                   data-title="Minecraft MazeRunner — 3D Maze Generator & Solver"
+                   data-blurb="Built in a team of three. I coded a recursive backtracking algorithm in C++ to generate perfect 3D mazes and a wall-follower agent to solve them, integrated with Minecraft through the mcpp API for automatic in-game maze construction and testing."
+                   data-tech="C++ · mcpp API">
+            <div class="proj__img"><img src="assets/images/proj-5.svg" alt="" loading="lazy" /></div>
+            <div class="proj__body">
+              <h3>Minecraft MazeRunner</h3>
+              <p>3D mazes, generated and solved in-game</p>
+              <span class="proj__tag sticker--coral">algorithms</span>
             </div>
           </article>
         </div>
@@ -224,7 +263,7 @@
         <h3 id="modalTitle"></h3>
         <p class="modal__tech" id="modalTech"></p>
         <p id="modalBlurb"></p>
-        <div class="modal__links">
+        <div class="modal__links" id="modalLinks">
           <a class="btn btn--coral boing" id="modalDemo" target="_blank" rel="noopener">Try it live 🚀</a>
           <a class="btn btn--outline boing" id="modalGit" target="_blank" rel="noopener">Peek the code</a>
         </div>
@@ -236,39 +275,80 @@
     <!-- ================= STORY / TIMELINE ================= -->
     <section class="section" id="story">
       <div class="container container--narrow">
-        <h2 class="section__title" data-pop>The lore so far <span class="scribble">📜</span></h2>
+        <h2 class="section__title" data-pop>My journey so far <span class="scribble">📜</span></h2>
 
         <div class="path">
           <div class="path__item" data-pop>
-            <span class="path__dot sticker--coral">🐣</span>
+            <span class="path__dot sticker--coral" aria-hidden="true">🛍️</span>
             <div class="path__card">
-              <span class="path__year">2021</span>
-              <h3>Wrote first line of code</h3>
-              <p>It was <code>console.log("hello")</code>. It worked. Immediately felt unstoppable.</p>
+              <span class="path__year">2022 — now</span>
+              <h3>Founder &amp; Operator, CTC International</h3>
+              <p>Run a Shopify eCommerce venture end-to-end, and built basic Power BI dashboards from sales data to guide purchasing decisions.</p>
             </div>
           </div>
           <div class="path__item path__item--right" data-pop>
-            <span class="path__dot sticker--lemon">💼</span>
+            <span class="path__dot sticker--lemon" aria-hidden="true">🧑‍🏫</span>
             <div class="path__card">
-              <span class="path__year">2022</span>
-              <h3>First freelance gigs</h3>
-              <p>Built sites for founders. Learned that "can you make the logo bigger" is a lifestyle.</p>
+              <span class="path__year">Apr — Jul 2023</span>
+              <h3>Programming Mentor, Delhi Institute of Computer Science</h3>
+              <p>Mentored 6–7 university students in Java, Python, C++ and web development — debugging code, supporting academic projects and teaching data structures and algorithms.</p>
             </div>
           </div>
           <div class="path__item" data-pop>
-            <span class="path__dot sticker--mint">🎨</span>
+            <span class="path__dot sticker--mint" aria-hidden="true">🎓</span>
             <div class="path__card">
-              <span class="path__year">2023</span>
-              <h3>Went full design-engineer</h3>
-              <p>Joined Studio Meridian. Shipped 15+ products and one legendary office playlist.</p>
+              <span class="path__year">Jul 2023 — Dec 2026 (expected)</span>
+              <h3>Bachelor of Computer Science, RMIT University</h3>
+              <p>Coursework includes Full Stack Development, Database Systems, Software Testing, Algorithms &amp; Analysis, Systems Architecture &amp; Design, Cyber Security, Foundations of AI and UI/UX Design.</p>
             </div>
           </div>
           <div class="path__item path__item--right" data-pop>
-            <span class="path__dot sticker--sky">🚀</span>
+            <span class="path__dot sticker--sky" aria-hidden="true">🗣️</span>
             <div class="path__card">
-              <span class="path__year">2024 — now</span>
-              <h3>Senior frontend @ TechNova</h3>
-              <p>Making a product 2M people use feel less like software, more like a friend.</p>
+              <span class="path__year">Mar 2025 — now</span>
+              <h3>Brand Ambassador &amp; Merchandiser, MixIn Media / Lex Collective</h3>
+              <p>Deliver in-store promotions across 30+ retail stores, collecting structured consumer feedback for marketing teams.</p>
+            </div>
+          </div>
+          <div class="path__item" data-pop>
+            <span class="path__dot sticker--pink" aria-hidden="true">☁️</span>
+            <div class="path__card">
+              <span class="path__year">2026</span>
+              <h3>Microsoft Azure Fundamentals (AZ-900)</h3>
+              <p>Certified in core cloud concepts and Azure services.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave wave--lav" aria-hidden="true"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,48 C240,90 480,0 720,40 C960,80 1200,10 1440,50 L1440,90 L0,90 Z"/></svg></div>
+
+    <!-- ================= CONTACT POSTCARD ================= -->
+    <section class="section section--lav" id="contact">
+      <div class="container container--narrow">
+        <h2 class="section__title" data-pop>Send me a postcard <span class="scribble">💌</span></h2>
+        <p class="section__sub" data-pop>Happy to chat about projects, study or ideas worth building.</p>
+
+        <div class="postcard" data-pop>
+          <div class="postcard__note">
+            <p class="postcard__greeting">Hi there,</p>
+            <p>Thanks for scrolling all the way down! If you'd like to talk about a project, a team idea
+            or anything on this page, my inbox is open.</p>
+            <p class="postcard__sign">— Arnav</p>
+          </div>
+
+          <div class="postcard__address">
+            <span class="postcard__stamp" aria-hidden="true">💻<small>CS</small></span>
+            <span class="postcard__postmark" aria-hidden="true">MELBOURNE</span>
+            <ul class="postcard__lines">
+              <li><span class="postcard__label">email</span><a href="mailto:jarnav2005@outlook.in">jarnav2005@outlook.in</a></li>
+              <li><span class="postcard__label">github</span><a href="https://github.com/DARKTRIDENT05" target="_blank" rel="noopener">github.com/DARKTRIDENT05</a></li>
+              <li><span class="postcard__label">linkedin</span><a href="https://www.linkedin.com/in/arnav-jain-a4612524a/" target="_blank" rel="noopener">linkedin.com/in/arnav-jain-a4612524a</a></li>
+            </ul>
+            <div class="postcard__actions">
+              <button class="btn btn--coral boing" id="copyEmail" type="button" data-email="jarnav2005@outlook.in">Copy my email 📋</button>
+              <span class="postcard__status" id="copyStatus" role="status" aria-live="polite"></span>
             </div>
           </div>
         </div>
@@ -280,16 +360,18 @@
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="socials">
-      <a class="social boing" href="https://github.com/DARKTRIDENT05" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
-      <a class="social boing" href="https://linkedin.com/in/arnav-jain-a4612524a" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
-      <a class="social boing" href="https://twitter.com/yourusername" target="_blank" rel="noopener" aria-label="Twitter">🐦</a>
-      <a class="social boing" href="mailto:jarnav2005@outlook.in" aria-label="Email">✉️</a>
+      <a class="social boing" href="https://github.com/DARKTRIDENT05" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">🐙</a>
+      <a class="social boing" href="https://www.linkedin.com/in/arnav-jain-a4612524a/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">💼</a>
+      <span class="social-wrap">
+        <button class="social boing" type="button" id="footerEmail" data-email="jarnav2005@outlook.in" aria-label="Copy email address" title="Copy email address">✉️</button>
+        <span class="social__toast" id="footerEmailStatus" role="status" aria-live="polite"></span>
+      </span>
     </div>
-    <p>Made with 🧡, redbull and an irresponsible number of <code>border-radius</code> — © <span id="year"></span> Arnav Jain</p>
+    <p>Designed &amp; built by Arnav Jain with HTML, CSS and JavaScript</p>
     <button class="btn btn--outline boing" id="toTop">Back to the top 🎈</button>
   </footer>
 
-  <!-- confetti canvas (fired on CTA & form success) -->
+  <!-- confetti canvas (fired on CTA) -->
   <canvas id="confettiCanvas" aria-hidden="true"></canvas>
 
   <!-- ================= SCRIPTS ================= -->

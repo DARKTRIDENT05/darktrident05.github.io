@@ -8,7 +8,7 @@
    5. Bounce-in reveals  (GSAP back.out pops on scroll)
    6. Scroll worm        (caterpillar progress bar)
    7. Draggable stickers (pointer-event physics, springs back? no — stays!)
-   8. Counters, modal, filters-free projects, form, nav, footer
+   8. Counters, modal, filters-free projects, nav, footer
    ========================================================================== */
 
 "use strict";
@@ -209,7 +209,7 @@ function initDraggables() {
 }
 
 /* ==========================================================================
-   8. THE REST — counters, modal, form, nav, footer, CTA confetti
+   8. THE REST — counters, modal, skill flips, contact, nav, footer, CTA confetti
    ========================================================================== */
 function initCounters() {
   const io = new IntersectionObserver((entries) => {
@@ -233,26 +233,102 @@ function initProjectModal() {
   const modal = $("#projModal");
   if (!modal) return;
 
+  let lastCard = null;
+
+  // only show a link button when the card actually provides a URL
+  const setLink = (el, url) => {
+    el.hidden = !url;
+    if (url) el.href = url; else el.removeAttribute("href");
+  };
+
   const open = (card) => {
+    lastCard = card;
     $("#modalTitle").textContent = card.dataset.title;
     $("#modalBlurb").textContent = card.dataset.blurb;
     $("#modalTech").textContent = card.dataset.tech;
-    $("#modalGit").href = card.dataset.github;
-    $("#modalDemo").href = card.dataset.demo;
+    setLink($("#modalGit"), card.dataset.github);
+    setLink($("#modalDemo"), card.dataset.demo);
+    $("#modalLinks").hidden = !card.dataset.github && !card.dataset.demo;
     const img = $("#modalImg");
     img.src = $("img", card).src;
-    img.alt = card.dataset.title;
+    img.alt = "";
     modal.hidden = false;
     document.body.style.overflow = "hidden";
+    $(".modal__x", modal).focus();
   };
   const close = () => {
     modal.hidden = true;
     document.body.style.overflow = "";
+    lastCard?.focus();
   };
 
-  $$(".proj").forEach((c) => c.addEventListener("click", () => open(c)));
+  $$(".proj").forEach((c) => {
+    c.addEventListener("click", () => open(c));
+    c.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(c); }
+    });
+  });
   $$("[data-close]", modal).forEach((el) => el.addEventListener("click", close));
   addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
+}
+
+/* skill cards flip on hover (CSS); touch screens flip on tap instead */
+function initSkillFlips() {
+  if (matchMedia("(hover:hover)").matches) return;
+  $$(".power").forEach((card) => {
+    card.addEventListener("click", () => card.classList.toggle("is-flipped"));
+  });
+}
+
+/* clipboard with an old-school fallback (works where the Clipboard API is blocked) */
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.cssText = "position:fixed;opacity:0;pointer-events:none";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch { /* not supported */ }
+    ta.remove();
+    return ok;
+  }
+}
+
+/* any [data-email] button copies the address and says so in its status element */
+function wireCopyEmail(btn, status) {
+  if (!btn || !status) return;
+  let timer;
+  btn.addEventListener("click", async () => {
+    const email = btn.dataset.email;
+    const ok = await copyText(email);
+    status.textContent = ok ? "Email copied! ✨" : email;   // if copying failed, show it to copy by hand
+    if (ok) {
+      const r = btn.getBoundingClientRect();
+      burstConfetti(r.left + r.width / 2, r.top + r.height / 2, 24);
+    }
+    clearTimeout(timer);
+    timer = setTimeout(() => { status.textContent = ""; }, ok ? 2200 : 6000);
+  });
+}
+
+/* postcard + footer email buttons */
+function initContact() {
+  wireCopyEmail($("#copyEmail"), $("#copyStatus"));
+  wireCopyEmail($("#footerEmail"), $("#footerEmailStatus"));
+
+  // arriving via "Say hi" / "Get in touch": give the postcard a little wave once it's in view
+  const postcard = $(".postcard");
+  if (!postcard) return;
+  $$('a[href="#contact"]').forEach((a) => a.addEventListener("click", () => {
+    postcard.classList.remove("postcard--hello");
+    setTimeout(() => postcard.classList.add("postcard--hello"), 700);
+  }));
+  postcard.addEventListener("animationend", () => postcard.classList.remove("postcard--hello"));
 }
 
 function initNavAndFooter() {
@@ -266,8 +342,7 @@ function initNavAndFooter() {
     if (e.target.closest("a")) links.classList.remove("is-open");
   });
 
-  // footer year + back to top
-  $("#year").textContent = new Date().getFullYear();
+  // back to top
   $("#toTop")?.addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
 
   // CTA confetti
@@ -288,5 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initDraggables();
   initCounters();
   initProjectModal();
+  initSkillFlips();
+  initContact();
   initNavAndFooter();
 });

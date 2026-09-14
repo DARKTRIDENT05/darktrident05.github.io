@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480">
+<rect width="720" height="480" fill="#e3f1ff"/>
+<circle cx="157" cy="71" r="13" fill="#ff6b57" stroke="#2b2b3a" stroke-width="2.5"/><circle cx="600" cy="81" r="9" fill="#d9c9ff" stroke="#2b2b3a" stroke-width="2.5"/><path d="M60 269q10 -14 20 0t20 0" fill="none" stroke="#ff6b57" stroke-width="3.5" stroke-linecap="round"/><circle cx="660" cy="300" r="9" fill="#ffd23f" stroke="#2b2b3a" stroke-width="2.5"/><path d="M560 421q10 -14 20 0t20 0" fill="none" stroke="#ffb8d1" stroke-width="3.5" stroke-linecap="round"/><circle cx="140" cy="416" r="9" fill="#b8f2d8" stroke="#2b2b3a" stroke-width="2.5"/>
+<text x="50%" y="46%" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-size="79">🧱</text>
+<text x="50%" y="62%" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="bold" font-size="36" fill="#2b2b3a">Minecraft MazeRunner</text>
+<text x="50%" y="70%" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-size="20" fill="#2b2b3a" opacity="0.75">3D maze generator &amp; solver</text>
+</svg>
