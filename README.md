@@ -1,2 +1,2 @@
-# arnavjain.github.io
+# (https://darktrident05.github.io)
 Personal Webpage
